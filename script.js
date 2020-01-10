@@ -1,100 +1,36 @@
-// Treversing the DOM
+// Create an Element
 
-let val;
+const li = document.createElement('li');
 
-const list = document.querySelector('ul.collection');
-console.log(list);
+// Add Class
+li.className = 'collection-item';
+console.log(li);
 
-const listItem = document.querySelector('li.collection-item:first-child');
-console.log(listItem);
+// Add Id
+li.id = 'new-item';
+console.log(li);
 
-val = listItem;
-val = list;
+// Add Attribute
+li.setAttribute('title', 'New Item');
+console.log(li);
 
-console.log(val);
+// Create a text Node & append
+li.appendChild(document.createTextNode('Hello Wolrd!'));
+console.log(li);
 
-// Get child node of ul (text nodes are just line breaks)
+// Create New Link Element
+const link = document.createElement('a');
 
-val = list.childNodes;
-// console.log(val);
+// Add Classes
+link.className = 'delete-item secondary-content';
 
-// val = list.childNodes[0];
-// console.log(val);
+// Add icon HTML
+link.innerHTML = '<i class="fa fa-remove"></i>'
 
-// val = list.childNodes[0].nodeName;
-// console.log(val);
-
-// val = list.childNodes[3].nodeType;
-// console.log(val);
-
-// Get children element nodes (HTML collection - no text nodes)
-val = list.children;
-console.log(val);
-
-val = list.children[1];
-console.log(val);
-
-list.children[3].textContent = 'Hello World!';
-console.log(val);
+// Append link into li
+li.appendChild(link);
 
 
-// Children of Children
-
-list.children[3].children;
-console.log(val);
-
-// list.children[3].children[0].id = 'test-link';
-// console.log(val);
-
-// First Child
-val = list.firstChild;
-console.log(val);
-
-// First Element Child
-val = list.firstElementChild;
-console.log(val);
-
-// Last Child
-val = list.lastChild;
-console.log(val);
-
-// Last Element Child
-val = list.lastElementChild;
-console.log(val);
-
-// Count child elements
-val = list.childElementCount;
-console.log(val);
-
-
-// Get Parent Node
-val = listItem.parentNode;
-console.log(val);
-
-val = listItem.parentElement;
-console.log(val);
-
-val = listItem.parentElement.parentElement;
-console.log(val);
-
-// Get next Siblings
-val = listItem.nextSibling;
-console.log(val);
-
-val = listItem.nextElementSibling;
-console.log(val);
-
-val = listItem.nextElementSibling.nextElementSibling.previousElementSibling;
-console.log(val);
-
-//Get Previous Sibling
-val = listItem.previousSibling;
-console.log(val);
-
-val = listItem.previousElementSibling;
-console.log(val);
-
-
-
-
-
+// Append li as child to ul
+document.querySelector('ul.collection').appendChild(li);
+console.log(li);
